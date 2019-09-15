@@ -9,6 +9,7 @@ def lambda_handler(event, context):
 
 
 def lambda_handler_wp(event, context):
+    """ args is fed by Lex via event """
     surname   = "unknown"
     givenName = "unknown"
     postcode  = "unknown"
@@ -24,6 +25,7 @@ def lambda_handler_wp(event, context):
         postcode = event['Details']['Parameters']['Postcode']
 
     return getDialogue(surname, givenName, postcode)
+
 
 def getDialogue(theSurname, theGivenName, thePostcode):
     from botocore.vendored import requests  # this is needed for lambda
