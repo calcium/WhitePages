@@ -80,6 +80,10 @@ def getDialogue(theSurname, theGivenName, thePostcode):
 if __name__ == '__main__':
     import sys
 
+    if len(sys.argv) < 4:
+        print("eg. python whitepages.py surname firstname postcode")
+        sys.exit(1)
+        
     surname = sys.argv[1]
     givenName = sys.argv[2]
     postcode = sys.argv[3]
